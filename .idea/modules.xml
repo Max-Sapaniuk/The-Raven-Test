@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../online_shop_reworked/.idea/online_shop_reworked.iml" filepath="$PROJECT_DIR$/../online_shop_reworked/.idea/online_shop_reworked.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/the_raven_test.iml" filepath="$PROJECT_DIR$/.idea/the_raven_test.iml" />
     </modules>
   </component>

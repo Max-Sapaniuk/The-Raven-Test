@@ -1,0 +1,19 @@
+footer {
+    background-color: gray;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 30px;
+    color: white;
+
+}
+
+.link {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+.link:hover {
+    text-decoration: none;
+    text-shadow: black 1px 1px 1px;
+    color: white;
+}
