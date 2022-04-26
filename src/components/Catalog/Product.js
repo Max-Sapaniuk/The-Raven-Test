@@ -24,7 +24,7 @@ function Product(props) {
                     {props.name}
                 </Typography>
                 <Typography gutterBottom variant="h6" component="div">
-                    {props.price}
+                    {props.price}$
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                     {props.desc.length > 40 ? props.desc.slice(0, 45) + "..." : props.desc}
