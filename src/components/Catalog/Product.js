@@ -13,7 +13,7 @@ function Product(props) {
         }
     }
     return (
-        <Card sx={{width: 345}}>
+        <Card sx={{width: 345, margin: "auto"}}>
             <CardMedia
                 component="img"
                 // height="140"

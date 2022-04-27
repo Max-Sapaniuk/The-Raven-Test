@@ -1,62 +1,21 @@
 import {handleActions} from 'redux-actions';
-import {addToCard} from "./ActionCreators";
+import {loadCatalog, toggleIsFetching} from "./ActionCreators";
+
 
 let catalogReducer = handleActions(
     {
-        // [addToCard]: (state)=>{
-        //     state.products.pop()
-        //     state.products = [...state.products]
-        //     return {...state}
-        // }
+        [loadCatalog]: (state, data) => {
+            state.products = [...data.payload]
+            return {...state}
+        },
+        [toggleIsFetching]: (state) => {
+            state.isFetching = !state.isFetching
+            return {...state}
+        }
     },
     {
-        products: [
-            {
-                id: 0,
-                name: "Test",
-                img: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
-                price: 300,
-                desc: "This is a test prod",
-            },
-            {
-                id: 1,
-                name: "Test",
-                img: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
-                price: 300,
-                desc: "This is a test prodThis is a test prodThis is a test prodThis is a test prod sdcwef wef we fw ef we fw ef w ec w dc wc ef be dc w",
-            },
-            {
-                id: 2,
-                name: "Test",
-                img: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
-                price: 300,
-                desc: "This is a test prod",
-            }, {
-                id: 3,
-                name: "Test",
-                img: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
-                price: 300,
-                desc: "This is a test prod",
-            }, {
-                id: 4,
-                name: "Test",
-                img: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
-                price: 300,
-                desc: "This is a test prod",
-            }, {
-                id: 5,
-                name: "Test",
-                img: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
-                price: 300,
-                desc: "This is a test prod",
-            }, {
-                id: 6,
-                name: "Test",
-                img: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
-                price: 300,
-                desc: "This is a test prod",
-            },
-        ]
+        products: [],
+        isFetching: false
     }
 )
 export default catalogReducer
