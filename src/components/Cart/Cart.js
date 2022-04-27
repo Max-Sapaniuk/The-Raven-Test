@@ -11,6 +11,8 @@ function Cart() {
     let totalPrice = useSelector(state => state.cartReducer.totalPrice)
     let dispatch = useDispatch()
     useEffect(() => {
+        if (JSON.parse(window.localStorage.getItem("products")) === null)
+            window.localStorage.setItem("products", "[]")
         if (products.length === 0 && JSON.parse(window.localStorage.getItem("products")).length !== 0){
             dispatch(loadFromLocalStorage())
         }

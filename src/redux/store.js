@@ -9,9 +9,14 @@ const rootReducer = combineReducers({
     cartReducer,
 })
 
-const store = createStore(rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(applyMiddleware(thunk)),
-);
+//Develop
+// const store = createStore(rootReducer,
+//     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(applyMiddleware(thunk)),
+// );
 
+//Build
+const store = createStore(rootReducer,
+    applyMiddleware(thunk),
+);
 
 export default store

@@ -1,4 +1,4 @@
-import {Avatar, Box, Divider, ListItem, ListItemAvatar, ListItemButton, ListItemText, Typography} from "@mui/material";
+import {Avatar, Box, Divider, ListItem, ListItemAvatar, ListItemButton, Typography} from "@mui/material";
 import {decrementNumber, incrementNumber} from "../../redux/ActionCreators";
 import {useDispatch} from "react-redux";
 
@@ -21,7 +21,8 @@ function Item(props) {
                     <Avatar src={props.img} sx={{
                         display: {xs: "none", sm: "block"},
                         width: {sm: "50px", md: "100px", lg: "150px"},
-                        height: {sm: "50px", md: "100px", lg: "150px"},
+                        height: "100%",
+                        objectFit: 'contain',
                     }} variant={"square"}/>
                 </ListItemAvatar>
                 <Box sx={{width: {sm: "60%", lg: "70%"}}}>

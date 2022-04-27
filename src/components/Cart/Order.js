@@ -1,7 +1,7 @@
 import {Form, Field} from "react-final-form";
-import {Button, FormControl, FormLabel, Input, TextField} from "@mui/material";
+import {Button, FormControl, FormLabel, TextField} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {changeForm, resetForm, setForm} from "../../redux/ActionCreators";
+import {changeForm, resetForm} from "../../redux/ActionCreators";
 import {ref, set, get} from "firebase/database";
 import {database} from "../../index";
 
@@ -16,7 +16,10 @@ function Order() {
         for (let i of cart.products)
             order.product[i.id] = i.number
         get(ref(database, "orders"))
-            .then(response => set(ref(database, `orders/${response.val().length}`), order).then(r => console.log("Done!")))
+            .then(response => set(ref(database, `orders/${response.val().length}`), order).then(r => {
+                dispatch(resetForm())
+                alert("Done!")
+            }))
     }
 
     return (
@@ -76,7 +79,6 @@ function Order() {
                               onClick={() => dispatch(resetForm())}>Reset</Button>
                   </form>
               )}>
-
         </Form>
     )
 }

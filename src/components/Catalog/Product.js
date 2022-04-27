@@ -13,21 +13,23 @@ function Product(props) {
         }
     }
     return (
-        <Card sx={{width: 345, margin: "auto"}}>
+        <Card sx={{width: 350, margin: "auto"}}>
             <CardMedia
                 component="img"
-                // height="140"
+                sx={{width: "100%", height: "300px", objectFit: 'contain'}}
+                // height="250"
+                // width={"400"}
                 image={props.img}
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    {props.name}
+                    {props.name.length > 25 ? props.name.slice(0, 25) + "..." : props.name}
                 </Typography>
                 <Typography gutterBottom variant="h6" component="div">
                     {props.price}$
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    {props.desc.length > 40 ? props.desc.slice(0, 45) + "..." : props.desc}
+                    {props.desc.length > 40 ? props.desc.slice(0, 40) + "..." : props.desc}
                 </Typography>
             </CardContent>
             <CardActions>

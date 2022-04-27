@@ -16,6 +16,8 @@ function Catalog() {
     })
 
     useEffect(() => {
+        if (JSON.parse(window.localStorage.getItem("products")) === null)
+            window.localStorage.setItem("products", "[]")
         if (products.length === 0 && JSON.parse(window.localStorage.getItem("products")).length !== 0){
             debugger
             JSON.parse(window.localStorage.getItem("products").length)
